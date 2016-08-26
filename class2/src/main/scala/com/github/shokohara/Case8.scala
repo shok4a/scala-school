@@ -8,7 +8,7 @@ object Case8 {
     (n % divisor != 0) either n or name
   }
 
-  val toFizzBuzzEither:ReaderT[({type Λ$[β] = Disjunction[String, β]})#Λ$, Int, Int] = for {
+  val toFizzBuzzEither: ReaderT[Lambda[β => Disjunction[String, β]], Int, Int] = for {
     _ <- fizzBuzz(15, "FizzBuzz")
     _ <- fizzBuzz(5, "Buzz")
     x <- fizzBuzz(3, "Fizz")
